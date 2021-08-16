@@ -1,0 +1,107 @@
+
+<!doctype html>
+<html lang="pt-br">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Perfil</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets\bootstrap\css\bootstrap.min.v4.3.1.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+    
+  </head>
+
+  <body class="bg-light">
+    {%  include 'accounts/Main-Bootstrap-v5.0.html' %}
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Mais Amigos Mais Descontos</h2>
+        <p class="lead">A FATEPI se preocupa muito com a segurança de dados dos seus Alunos</p>
+      </div>
+
+      <div class="row">
+
+        <style type="text/css">
+      input[type="text"]{
+        width: 100%;
+        border-top: 0px solid;
+        border-left: 0px solid;
+        border-right: 0px solid;
+        border-bottom: 1px solid silver;
+      }
+      #form-container{
+        width: 800px;
+      }
+      .col-lg-6.col-md-12 {
+        margin-top: 21px !important;
+      }
+    </style>
+
+
+    {% load crispy_forms_tags %} 
+
+    <div id="form-container" class="container">
+      <h4>INDIQUE UM ESTUDANTE</h4><br/>
+      
+      <form method="post">
+          {% csrf_token %}
+          <div class="row">
+
+            <div class="col-lg-6 col-md-12">
+              {{form.nome|as_crispy_field}}
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              {{form.telefone|as_crispy_field}}
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              {{form.curso_pretendido|as_crispy_field}}
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              {{form.email|as_crispy_field}}
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              {{form.bonus|as_crispy_field}}
+            </div>
+
+            <input type="hidden" name="id_usuario" id="id_id_usuario" value="{{ request.user }}">
+
+          </div>
+        <br/>       
+        <button type="submit" class="btn btn-primary" >Salvar</button>
+        </form>
+        {% for message in messages %}
+          <p id="messages">{{message}}</p>
+        {% endfor %}
+      </div>
+
+      {% if product %}
+        <a href="{% url 'delete_indicado' indicado.id %}">Delete</a>
+      {% endif %}
+        
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">FATEPI FAESPI</p>
+        
+      </footer>
+    </div>
+
+    
+    
+  </body>
+</html>
+

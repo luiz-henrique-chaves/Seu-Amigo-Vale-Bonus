@@ -1,0 +1,65 @@
+{%  extends 'accounts/Main-Bootstrap-v5.0.html' %}
+
+{% block content %}
+
+{% load static %}
+<br>
+
+<div class="row">
+
+	<div class="col-md-10">
+		<h5>LISTA DE INDICADOS</h5>
+		<hr>
+		<div class="card card-body">
+			<style>
+			@media (max-width: 410px)
+			{
+			table{
+				font-size: 13px !important;
+				margin-left: -9px !important;
+				}
+			#control-button{
+				width: 60px;
+				margin: 2px;
+			}
+			}
+			
+			</style>
+			<table class="table table-sm" >
+				<tr>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>Curso pretendido</th>
+
+				</tr>
+				
+				{% for indicado in indicados %}
+					{% if indicado.status == 'Pendente' %}
+						<tr style="background-color: #ffcccc;">
+					{% elif indicado.status == 'Matriculado' %}
+						<tr style="background-color: #d3f8d3;">
+					{% endif %}
+						<td style="max-width: 120px;">{{indicado.nome}}</td>
+						<td style="max-width: 120px;">{{indicado.telefone}}</td>
+						<td style="max-width: 120px;">{{indicado.curso_pretendido}}</td>
+						<td>
+							<a id="control-button" class="btn btn-sm btn-dark" href="/indicado/update/{{ indicado.id }}/">Editar</a>
+							<a id="control-button" class="btn btn-sm btn-danger" href="/indicado/delete/{{ indicado.id}}/">Excluir</a>
+						</td>
+					</tr>
+
+				{% endfor %}
+
+		
+			</table>
+		</div>		
+	</div>
+	
+
+</div>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Perfil</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'assets\bootstrap\css\bootstrap.min.v4.3.1.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+    
+  </head>
+
+  <body class="bg-light">
+    {%  include 'accounts/Main-Bootstrap-v5.0.html' %}
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Perfil</h2>
+      </div>
+
+      
+<div class="container bootstrap snippet">
+    
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <div class="row">
+  		<div class="col-sm-10" style="margin-left:10px;"><h1>{{ request.user }} </h1></div>
+    </div>
+      </div><br>         
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Indicados</strong></span>: {{ indicados_cont }}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Matriculados</strong></span>: {{ matriculados_cont }}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Pendentes</strong></span>: {{ pendentes_cont }}</li>
+          </ul>               
+          
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Nome</h4></label><br/>
+                              <small class="text-muted">{{aluno.nome_do_aluno}}</small>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="last_name"><h4>Curso</h4></label>
+                            <br/> <small class="text-muted">{{aluno.curso}}</small>
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="phone"><h4>Matricula</h4></label>
+                              <br/><small class="text-muted">{{aluno.matricula}}</small>
+                          </div>
+                      </div>
+          
+                      <div class="form-group">
+                          <div class="col-xs-6">
+                             <label for="mobile"><h4>Periodo</h4></label>
+                            <br/><small class="text-muted">{{aluno.periodo}}</small>
+                          </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                            <br>
+                            <a href='/atualizar/{{request.user}}' class="btn btn-lg btn-secondary" type="submit">Editar</a>
+                        </div>
+                      </div>
+              	</div>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+             
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+     <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">FATEPI FAESPI</p>
+        
+      </footer>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+

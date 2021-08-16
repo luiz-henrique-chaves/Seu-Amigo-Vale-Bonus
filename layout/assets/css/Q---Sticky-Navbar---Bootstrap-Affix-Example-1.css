@@ -1,0 +1,19 @@
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
+}
+
+#head {
+  background-color: #F44336;
+  color: #fff;
+  height: 200px;
+}
+
+div.container {
+  height: 1000px;
+}
+

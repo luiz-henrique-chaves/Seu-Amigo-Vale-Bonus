@@ -1,0 +1,11 @@
+.btn.btn-primary.btn-block.btn-lg {
+  width: 273px;
+}
+
+.features-icons.bg-light.text-center {
+  height: 511px;
+  background: #C04848;
+  background: -webkit-linear-gradient(to right, #480048, #C04848) !important;
+  /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to right, #480048, #C04848);
+}
+

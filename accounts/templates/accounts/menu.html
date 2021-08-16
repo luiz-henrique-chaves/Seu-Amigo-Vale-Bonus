@@ -1,0 +1,56 @@
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Cargos</h5>
+			  	</div>
+			  	
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Funcionários</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title"><a class="btn btn-sm btn-info" href="{% url 'create_aluno' %}">Cadastrar novo funcionário</a></h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Cadastre os cargos existentes nesta escola</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		
+		<form action="/novo/cargo/" method="POST">
+			<div class="modal-body">
+				<div class="form-group">
+					{% csrf_token %}
+					<label class="col-form-label">Função do funcionário</label>
+					<input type="text" class="form-control" name="responsibility" maxlength="100" required id="id_responsibility">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Cadastrar</button>		  
+			</div>
+		</form>
+	  </div>
+	</div>
+  </div>

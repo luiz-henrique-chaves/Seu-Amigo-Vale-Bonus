@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+  <head>
+    <title>Mais Amigos Mais Descontos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Luiz Henrique Chaves">
+    <meta name="generator" content="Hugo 0.84.0">
+
+    <!-- Bootstrap core CSS -->
+	<link href="{% static 'Bootstrap-v5.0.2/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .blog-footer {
+        padding: 2.5rem 0;
+        color: #727272;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-top: .05rem solid #e5e5e5;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Bootstrap-v5.0.2/headers.css' %}" rel="stylesheet">
+  </head>
+<body>
+	{%  include 'Headers-Bootstrap-v5.0.html' %}
+	
+	<div class="container-fluid">
+	{% block content %}
+
+
+
+	{% endblock %}
+    </div>
+	
+	<!-- Footer 
+	<footer class="blog-footer">
+  <p>Todos os direitos reservados</p>
+  <p>
+    <a href="https://grupomagister.com.br" style="text-decoration:none;">Gurpo Magister</a>
+  </p>
+</footer>
+	Footer -->
+
+<script src="{% static 'Bootstrap-v5.0.2/bootstrap.bundle.min.js' %}" ></script>
+</body>
+</html> 

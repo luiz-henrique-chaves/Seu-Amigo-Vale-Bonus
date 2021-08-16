@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - FATEPI-FAESPI</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/navbar-dropdown-multiple-columns.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Q---Sticky-Navbar---Bootstrap-Affix-Example-1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Q---Sticky-Navbar---Bootstrap-Affix-Example.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Registration-Form-with-Photo.css' %}">
+    <style type="text/css">
+    nav{
+        height: 46px !important;
+        min-height: 60px !important;
+    }
+    .caixa-escrever{
+        width: 100%;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="features-icons bg-light text-center">
+        <div class="container" style="color: white;fallback for old browsers */
+background: -webkit-linear-gradient(to right, #480048, #C04848);Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #480048, #C04848);">
+            <div class="row" style="margin-top: -40px;"><div class="col-lg-4">
+    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3"></div>
+</div><div class="col-lg-4">
+    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+        <h3 style="font-size: 5em;">Temos novidades!</h3>
+        <p class="lead mb-0">Indique um amigo para estudar com a gente e ganhe até 10% de desconto por semestre!</p>
+    </div>
+</div>
+ <p style="font-size:22px !important;margin-top:40px;">Para garantir que você tenha mais facilidade na condição de pagamento do seu curso de graduação, criamos um programa especial, o "Mais Amigos, mais descontos".</p><div class="col-lg-4">
+    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3"></div>
+</div></div>
+        </div>
+    </section>
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+
+
+<form method="POST" >
+	{% csrf_token %}
+    <h2 class="text-center">Cadastre-se agora mesmo e comece a indicar</h2>
+
+    <div class="form-group">
+        <label>Usuário</label><br>
+        <input class="caixa-escrever" type="text" name="username" maxlength="150"  required="" id="id_username">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label><br>
+        <input class="caixa-escrever" type="email" name="email" maxlength="254" id="id_email">
+    </div>
+
+    <div class="form-group">
+        <label>Senha</label><br>
+        <input class="caixa-escrever" type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+    </div>
+    
+	<div class="form-group">
+        <label>Confirme a senha</label><br>
+		<input class="caixa-escrever" type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+	</div>
+    
+	<div class="form-group">
+        <div class="form-check">
+		<label class="form-check-label">
+		<input type="checkbox" class="form-check-input">Eu aceito todos os termos!.</label>
+	</div>
+
+    </div>
+    <div class="form-group">
+		<button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+	</div>
+	
+	<a class="already" href="/login">Você já tem um cadastro? clique aqui e faça o login.</a>
+
+    {{form.errors}}
+				
+		
+	
+	</form>
+	</div>
+    
+    </div>
+	
+	
+</body>
+
+</html>
